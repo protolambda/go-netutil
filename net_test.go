@@ -22,8 +22,6 @@ import (
 	"reflect"
 	"testing"
 	"testing/quick"
-
-	"github.com/davecgh/go-spew/spew"
 )
 
 func TestParseNetlist(t *testing.T) {
@@ -61,8 +59,6 @@ func TestParseNetlist(t *testing.T) {
 			continue
 		}
 		if !reflect.DeepEqual(l, test.wantList) {
-			spew.Dump(l)
-			spew.Dump(test.wantList)
 			t.Errorf("%q: got %v, want %v", test.input, l, test.wantList)
 		}
 	}
